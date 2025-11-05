@@ -48,7 +48,6 @@ export interface DottedBackgroundProps {
  *
  * @author prodbyeagle
  */
-
 export function DottedBackground({
 	dotColor = 'var(--muted-foreground)',
 	dotSize = 1,

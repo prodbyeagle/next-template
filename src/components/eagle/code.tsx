@@ -1,17 +1,21 @@
 import { cn } from '@/lib/utils';
 
+
+
 import type { JSX } from 'react';
+
+
+
+
 
 export type CodeProps = React.HTMLAttributes<HTMLElement>;
 
 /**
- * A styled `<code>` component for displaying inline code snippets in a consistent, accessible format.
+ * Inline `<code>` element with consistent styling.
  *
- * @param props - React props extending `HTMLAttributes<HTMLElement>`. Commonly used: `className`, `children`.
- *
- * @returns A styled inline `<code>` element.
- *
- * @author prodbyeagle
+ * @param className - Additional CSS classes to apply.
+ * @param props - Standard HTML attributes for a `<code>` element.
+ * @returns Styled inline code element.
  */
 export function Code({ className, ...props }: CodeProps): JSX.Element {
 	return (
