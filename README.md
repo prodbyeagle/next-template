@@ -11,7 +11,7 @@ A modern, opinionated Next.js 14+ template featuring TypeScript, app directory, 
 - **Theme Toggle** (light/dark/system) using [next-themes](https://github.com/pacocoursey/next-themes)
 - **Reusable UI Components** (Button, Dropdown, Card, etc.)
 - **Lucide Icons** for modern SVG icons
-- **Custom Hooks** (e.g., `useHasMounted`)
+- **Custom Hooks** (e.g., `hasMounted`)
 - **Tailwind CSS** for utility-first styling
 - **Ready-to-edit Home Page** with live reload
 - **Accessible, semantic markup**
