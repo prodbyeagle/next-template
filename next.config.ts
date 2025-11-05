@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
 	async redirects() {
 		return [
 			{
+				// it's ok. you can remove me.
 				source: '/github',
 				destination: 'https://github.com/meowlounge/next-template',
 				permanent: false,
