@@ -1,8 +1,41 @@
 import { Button } from '@/components/ui/button';
 
-import { Code, DocsLink } from '@/components';
-import { ArrowRight, Github, Sparkles } from 'lucide-react';
+import { Code } from '@/components';
+import { ArrowRight, Sparkles } from 'lucide-react';
 import Link from 'next/link';
+
+import type { JSX } from 'react';
+import { cn } from '@/lib/utils';
+import { GithubIcon } from '../../assets/icons/github';
+
+export interface DocsLinkProps {
+	href: string;
+	children: string;
+	className?: string;
+	prefetch?: boolean;
+}
+
+export function DocsLink({
+							 href,
+							 children,
+							 className,
+							 prefetch = false,
+						 }: DocsLinkProps): JSX.Element {
+	return (
+		<Link
+			href={href}
+			className={cn(
+				'underline decoration-dotted underline-offset-4 transition-colors duration-200 hover:text-foreground',
+				className
+			)}
+			prefetch={prefetch}
+			target='_blank'
+			rel='noopener noreferrer'>
+			{children}
+		</Link>
+	);
+}
+
 
 export default function HomePage() {
 	return (
@@ -54,7 +87,7 @@ export default function HomePage() {
 							href='/github'
 							aria-label='View on GitHub'
 							prefetch={false}>
-							<Github className='size-4 mr-2' />
+							<GithubIcon className='size-4 mr-2' />
 							view-on-github
 						</Link>
 					</Button>
