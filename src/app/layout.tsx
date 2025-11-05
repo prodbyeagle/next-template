@@ -7,7 +7,6 @@ import './globals.css';
 import {
 	DottedBackground,
 	ReactScan,
-	ScreenSizeIndicator,
 	ThemeToggle,
 	Toaster,
 } from '@/components';
@@ -36,7 +35,7 @@ export default function RootLayout({
 	return (
 		<html lang='en' suppressHydrationWarning>
 			<body
-				className={`${geistMono.variable} ${geistSans.variable} antialiased font-sans cursor-default select-none relative`}>
+				className={`${geistMono.variable} ${geistSans.variable} antialiased font-sans relative`}>
 				<ThemeProvider
 					attribute='class'
 					defaultTheme='system'
@@ -57,12 +56,10 @@ export default function RootLayout({
 					<div className='container mx-auto relative z-0'>
 						{children}
 					</div>
+
+					{/* Toast container: Wraps all toast notifications. Comment out if not needed. */}
+					<Toaster />
 				</ThemeProvider>
-
-				{/* Toast container: Wraps all toast notifications. Comment out if not needed. */}
-				<Toaster />
-
-				<ScreenSizeIndicator debug={false} />
 
 				{/* Developer Component ( view fps + fps drops and rendering) */}
 				<ReactScan />
