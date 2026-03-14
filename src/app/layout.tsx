@@ -1,30 +1,22 @@
 import type { Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist_Mono, Inter } from 'next/font/google';
 
 import './globals.css';
 
-import {
-	DottedBackground,
-	ReactScan,
-	ThemeToggle,
-	Toaster,
-} from '@/components';
-
-const geistSans = Geist({
-	variable: '--font-geist-sans',
+const inter = Inter({
+	variable: '--font-sans',
 	subsets: ['latin'],
 });
 
 const geistMono = Geist_Mono({
-	variable: '--font-geist-mono',
+	variable: '--font-mono',
 	subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
-	title: '🦅 @prodbyeagle',
-	description: 'Eagle Template for Next.js',
-	icons: 'https://cdn.discordapp.com/emojis/1385016033831555233.webp?size=32&animated=true',
+	title: 'start now.',
+	description: 'have fun.',
 };
 
 export default function RootLayout({
@@ -34,35 +26,10 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en' suppressHydrationWarning>
-			<body
-				className={`${geistMono.variable} ${geistSans.variable} antialiased font-sans relative`}>
-				<ThemeProvider
-					attribute='class'
-					defaultTheme='system'
-					enableSystem>
-					<div className='absolute top-4 right-4 z-50 pointer-events-auto'>
-						<ThemeToggle />
-					</div>
-
-					<div className='fixed inset-0 -z-10'>
-						<DottedBackground
-							dotColor='var(--foreground)'
-							className='opacity-45'
-							spacing={28}
-							dotSize={2}
-						/>
-					</div>
-
-					<div className='container mx-auto relative z-0'>
-						{children}
-					</div>
-
-					{/* Toast container: Wraps all toast notifications. Comment out if not needed. */}
-					<Toaster />
+			<body className={`${inter.variable} ${geistMono.variable} antialiased font-sans`}>
+				<ThemeProvider attribute={['class', 'data-theme']} defaultTheme='system' enableSystem>
+					{children}
 				</ThemeProvider>
-
-				{/* Developer Component ( view fps + fps drops and rendering) */}
-				<ReactScan />
 			</body>
 		</html>
 	);

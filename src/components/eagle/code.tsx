@@ -1,12 +1,6 @@
 import { cn } from '@/lib/utils';
 
-
-
 import type { JSX } from 'react';
-
-
-
-
 
 export type CodeProps = React.HTMLAttributes<HTMLElement>;
 
@@ -21,8 +15,8 @@ export function Code({ className, ...props }: CodeProps): JSX.Element {
 	return (
 		<code
 			className={cn(
-				'rounded-sm bg-muted px-1 py-0.5 font-mono text-sm',
-				'text-accent-foreground/70 transition-all duration-300',
+				'rounded-sm bg-default-100 px-1 py-0.5 font-mono text-sm',
+				'text-default-600 transition-all duration-300',
 				className
 			)}
 			{...props}
